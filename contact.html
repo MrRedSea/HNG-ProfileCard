@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="main-nav" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="contact.html" class="nav-logo" data-testid="test-logo">My Portfolio</a>
+            <button class="mobile-menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link" data-page="home">Home</a></li>
+                <li><a href="about.html" class="nav-link" data-page="about">About Me</a></li>
+                <li><a href="contact.html" class="nav-link active" data-page="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page active" id="contact-page" >
+        <div class="contact-form-container">
+            <h1 class="form-title"> Contact</h1>
+            <form class="contact-form" id="contact-form" novalidate>
+
+                <!---------- Full Name ----------------->
+                <div class="form-group">
+                    <label for="contact-name">Full Name</label>
+                    <input type="text"
+                            id="contact-name" 
+                            class="form-control" 
+                            data-testid="test-contact-name"
+                            placeholder="ciroma chibuike abubakar" 
+                            required>
+                    <div class="error-message" id="name-error" data-testid="test-contact-error-name">
+                        Please enter your full name
+                    </div>
+                </div>
+
+                <!--------- Email Address ----------->
+                <div class="form-group">
+                    <label for="contact-email" >Email Address</label>
+                    <input type="email"
+                            id="contact-email"
+                            class="form-control"
+                            data-testid="test-contact-email"
+                            placeholder="example@gmail.com"
+                            required>
+                    <div class="error-message" id="email-error" data-testid="test-contact-error-email">
+                        Please enter a valid Email Address
+                    </div>
+                </div>
+
+                <!----------- Subject ------------->
+                <div class="form-group">
+                    <label for="contact-subject">Subject</label>
+                    <textarea id="contact-message"
+                                class="form-control"
+                                data-testid="test-contact-message"
+                                placeholder="complain"
+                                required></textarea>
+                </div>
+                <div class="error-message" id="message-error" data-testid="test-contact-error-message">
+                    Please entr a message with atleast 10 characters
+                </div>
+
+                <button type="submit" class="submit-btn" data-testid="test-contact-submit">Send Message</button>
+
+                <div class="success-message" data-testid="test-contact-success">
+                    Thank you for your message! We'll get backto you son.
+                </div>
+
+            </form>
+
+            <div class="about-cta">
+                <a href="index.html" class="cta-link" aria-label="Back to profile">← Back to Profile</a>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

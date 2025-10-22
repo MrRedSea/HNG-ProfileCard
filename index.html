@@ -7,91 +7,113 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <article class="profile-card" data-testid="test-profile-card">
-        <div class="profile-container">
-
-            <!-------------------- Avatar Section --------------------->
-            <section class="avatar-section">
-                <figure class="avatar-container">
-                    <img src="Images/HNG-profileImage.jpg"
-                         alt="" 
-                         class="avatar" 
-                         data-testid="test-user-avatar">
-                </figure>
-                <h2 classs="user-name" data-testid="test-user-name"> Odogbo Moses</h2>
-                <div class="avatar-upload">
-                    <input type="file" id="avatar-upload" accept="image/*" style="display: none;"  data-testid="test-avatar-input">
-                    <button id="upload-btn">Change Avatar</button>
-                </div>
-            </section>
-
-            <!-------------------- Content Section --------------------->
-            <section class="content-section">
-                <header>
-                    <h2 class="user-name" data-testid="test-user-name">Odogbo Moses Damilola</h2>
-                    <p class="user-bio" data-testid="test-user-bio">
-                        I am an aspiring front-end developer with a passion for creating visually appealing and user-friendly digital experiences. 
-                        Driven by the desire to bridge creativity with technology, I transform designs into functional websites that solve real-world problems. 
-                        Currently, I'm excited to participate in the HNG internship to deepen my expertise in modern frameworks like React.js. 
-                        My goals are to master responsive design, enhance my JavaScript proficiency, and build a robust portfolio. 
-                        Eager to learn and grow, I look forward to collaborating with like-minded individuals and mentors on my journey to becoming a job-ready developer.
-                    </p>
-                </header>
-
-                <div class="user-time" data-testid="currentTimeUTC">Loading time...</div>
-
-                <nav class="social-links">
-                    <h3>Connect with me</h3>
-                    <ul class="social-links-list" data-testid="test-user-social-links">
-                        <li><a href="https://twiter.com/mrreadsea_"
-                             class="social-link" 
-                             target="_blank" 
-                             rel="noopener noreferrer" 
-                             data-testid="test-user-social-twitter">Twitter</a>
-                        </li>
-
-                        <li><a href="https://github.com/mrreadsea_"
-                             class="social-link" 
-                             target="_blank" 
-                             rel="noopener noreferrer" 
-                             data-testid="test-user-social-twitter">GitHub</a>
-                        </li>
-
-                        <li><a href="https://linkedin.com/mrreadsea_"
-                             class="social-link" 
-                             target="_blank" 
-                             rel="noopener noreferrer" 
-                             data-testid="test-user-social-twitter">LinkedIn</a>
-                        </li>
-
-                        <li><a href="https://twiter.com/mrreadsea_"
-                             class="social-link" 
-                             target="_blank" 
-                             rel="noopener noreferrer" 
-                             data-testid="test-user-social-twitter">Twitter</a>
-                        </li>
-                    </ul>
-                </nav>
-
-                <div class="lists-section">
-                    <section class="list-container">
-                        <h3>Hobbies</h3>
-                        <ul class="list hobbies-list">
-                            <li>Reading</li>
-                            <li>Writing</li>
-                            <li>Watching Movies</li>
-                            <li>Making researches</li>
-                        </ul>
-                    </section>
-                </div>
-
-
-            </section>
-
-
-
+    <!------------------ Navigation Bar -------------------->
+    <nav class="main-nav" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo" data-testid="test-logo">My Portfolio</a>
+            <button class="mobile-menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active" data-page="home">Home</a></li>
+                <li><a href="about.html" class="nav-link" data-page="about">About Me</a></li>
+                <li><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
+            </ul>
         </div>
-    </article>
+    </nav>
+
+    <!-------- Main Content --------------->
+    <main class="main-content">
+        <section class="page active" id="home-page">
+            <article class="profile-card" data-testid="test-profile-card">
+                <div class="profile-container">
+
+                    <!-------------------- Avatar Section --------------------->
+                    <section class="avatar-section">
+                        <figure class="avatar-container">
+                            <img src="Images/HNG-profileImage.jpg"
+                                alt="" 
+                                class="avatar" 
+                                data-testid="test-user-avatar">
+                        </figure>
+                        <h2 class="user-name" data-testid="test-user-name"> Odogbo Moses</h2>
+                        <div class="avatar-upload">
+                            <input type="file" id="avatar-upload" accept="image/*" style="display: none;"  data-testid="test-avatar-input">
+                            <button id="upload-btn">Change Avatar</button>
+                        </div>
+                    </section>
+
+                    <!-------------------- Content Section --------------------->
+                    <section class="content-section">
+                        <header>
+                            <h2 class="user-name" data-testid="test-user-name">Odogbo Moses Damilola</h2>
+                            <p class="user-bio" data-testid="test-user-bio">
+                                I am an aspiring front-end developer with a passion for creating visually appealing and user-friendly digital experiences. 
+                                Driven by the desire to bridge creativity with technology, I transform designs into functional websites that solve real-world problems. 
+                                Currently, I'm excited to participate in the HNG internship to deepen my expertise in modern frameworks like React.js. 
+                                My goals are to master responsive design, enhance my JavaScript proficiency, and build a robust portfolio. 
+                                Eager to learn and grow, I look forward to collaborating with like-minded individuals and mentors on my journey to becoming a job-ready developer.
+                            </p>
+                        </header>
+
+                        <div class="user-time" data-testid="currentTimeUTC">Loading time...</div>
+
+                        <nav class="social-links">
+                            <h3>Connect with me</h3>
+                            <ul class="social-links-list" data-testid="test-user-social-links">
+                                <li><a href="https://twiter.com/mrreadsea_"
+                                    class="social-link" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    data-testid="test-user-social-twitter">Twitter</a>
+                                </li>
+
+                                <li><a href="https://github.com/mrreadsea_"
+                                    class="social-link" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    data-testid="test-user-social-twitter">GitHub</a>
+                                </li>
+
+                                <li><a href="https://linkedin.com/mrreadsea_"
+                                    class="social-link" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    data-testid="test-user-social-twitter">LinkedIn</a>
+                                </li>
+
+                                <li><a href="https://twiter.com/mrreadsea_"
+                                    class="social-link" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    data-testid="test-user-social-twitter">Twitter</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <div class="lists-section">
+                            <section class="list-container">
+                                <h3>Hobbies</h3>
+                                <ul class="list hobbies-list">
+                                    <li>Reading</li>
+                                    <li>Writing</li>
+                                    <li>Watching Movies</li>
+                                    <li>Making researches</li>
+                                </ul>
+                            </section>
+                        </div>
+
+
+                    </section>
+
+
+
+                </div>
+            </article>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>

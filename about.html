@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <nav class="main-nav" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="about.html" class="nav-logo" data-testid="test-logo">My Portfolio</a>
+            <button class="mobile-menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link" data-page="home">Home</a></li>
+                <li><a href="about.html" class="nav-link active" data-page="about">About Me</a></li>
+                <li><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="page active" id="about-page" data-testid="test-about-page">
+        <div class="about-page">
+            <h1 class="page-title"> About Me</h1>
+
+            <section class="about-section" data-testid="test-about-bio">
+                <h2>My Journey</h2>
+                
+                <p>I began exploring web development because I enjoy turning ideas into visible, usable products.
+                     I started with HTML and CSS, then picked up JavaScript to make interfaces interactive. 
+                     Along the way I built small projects, read documentation daily, 
+                     and learned to debug by reproducing problems and breaking features on purpose — that taught me more than any tutorial.
+                </p>
+
+                <p>Today I focus on creating clean, accessible user interfaces and learning best practices for maintainable code. 
+                    I value clarity, incremental improvement, and shipping things people can actually use.
+                </p>
+            </section>
+
+            <section class="about-section" data-testid="test-about-goals">
+                <h2>Goals in This Program</h2>
+                <p>My goals while working through this program are practical and growth-oriented:</p>
+                <ul>
+                    <li>Ship at least three complete projects that demonstrate responsive design and accessibility.</li>
+                    <li>Deepen my JavaScript knowledge — especially asynchronous patterns and modern tooling.</li>
+                    <li>Learn how to test front-end code and set up CI for simple deployments.</li>
+                    <li>Improve my ability to read and contribute to open source repositories.</li>
+                    <li>Practice clear README and documentation habits so others can use my work.</li>
+                </ul>
+            </section>
+
+            <section class="about-section" data-testid="test-about-confidence">
+                <h2>Areas I'm Improving</h2>
+
+                <p>I am confident with layout and building UIs, but there are areas I want to strengthen:</p>
+                <ul>
+                    <li><strong>Back-end integration:</strong> designing stable APIs and handling authentication flows.</li>
+                    <li><strong>Performance tuning:</strong> identifying render bottlenecks and optimizing delivery.</li>
+                    <li><strong>Testing:</strong> writing reliable unit and integration tests for UI logic.</li>
+                    <li><strong>Advanced algorithms:</strong> algorithmic problem solving for interviews and complex features.</li>
+                </ul>
+                <p>These are active learning targets — I set small, measurable milestones and iterate from there.</p>
+            </section>
+
+            <section class="about-section" data-testid="test-about-future-note">
+                <h2>Note to My Future Self</h2>
+
+                <p>Keep building. Celebrate the small wins and keep a habit of shipping things—even imperfectly. 
+                    Revisit old projects and refactor them with what you learn. 
+                    Keep your curiosity alive: ask questions, read code, and mentor others when you can.
+                </p>
+
+                <p>Remember to document decisions, back up important demos, and keep improving your process. 
+                    In a year, compare notes — you’ll be surprised by how much you’ve grown.
+                </p>
+            </section>
+
+            <div class="about-cta">
+                <a href="index.html" class="cta-link" aria-label="Back to profile">← Back to Profile</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

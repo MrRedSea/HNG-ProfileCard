@@ -1,19 +1,100 @@
+/* Reset and base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --text-color: #333;
+    --light-bg: #f5f7fa;
+    --white: #ffffff;
+    --error-color: #e74c3c;
+    --success-color: #27ae60;
+}
+
 body {
     font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: var(--text-color);
+    background: var(--light-bg);
     min-height: 100vh;
-    display: flex;
+    /*display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 20px;*/
+}
+
+/* Navigation */
+.main-nav {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color:var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+.nav-links a.active {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.page { 
+    display: none;
+    animation: fadeIn 1.5s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Profile Card Style */
@@ -192,7 +273,7 @@ a:focus, button:focus {
 }
 
 /* @media for smaller screens */
-@media (min-width: 7576px) {
+@media (min-width: 768px) {
    .lists-section {
        flex-direction: row;
    }
@@ -209,5 +290,266 @@ a:focus, button:focus {
 
     .avatar-section {
         align-items: flex-start;
+    }
+}
+
+/* Contact Form Styles */
+.contact-form-container {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+}
+
+.form-title{
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Form controls (inputs & textarea) */
+.form-control {
+    background: var(--white);
+    border: 1px solid #e6eef8;
+    padding: 0.75rem 0.9rem;
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    width: 100%;
+    transition: box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+/* Placeholder styling (cross‑browser) */
+.form-control::-webkit-input-placeholder { color: #9aa4b2; opacity: 1; } /* Chrome, Safari, Opera */
+.form-control::-moz-placeholder          { color: #9aa4b2; opacity: 1; } /* Firefox 19+ */
+.form-control:-ms-input-placeholder      { color: #9aa4b2; opacity: 1; } /* IE 10+ */
+.form-control::placeholder               { color: #9aa4b2; opacity: 1; } /* Modern spec */
+
+/* Optional: slightly lighter / italic for textarea placeholder */
+textarea.form-control::placeholder {
+    color: #98a4b0;
+    font-style: italic;
+}
+
+/* Focus state for better accessibility */
+.form-control:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 8px 24px rgba(37,117,252,0.10);
+    transform: translateY(-1px);
+}
+
+/* Error states */
+.form-control.error {
+    border-color: var(--error-color);
+    box-shadow: none;
+}
+.error-message { 
+    display: none; 
+    color: var(--error-color); 
+    font-size: 0.9rem; 
+    margin-top: 0.35rem; 
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-self: flex-start;
+}
+
+.submit-btn:hover, .submit-btn:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 13px rgba(106, 17, 203, 0.3);
+    outline: none;
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.success-message {
+    background-color: rgba(39, 174, 96, 0.1);
+    color: var(--success-color);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 1rem;
+    display: none;
+}
+
+.success-message.active {
+    display: block;
+}
+
+/* About Page Styles */
+.about-page {
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+.about-section {
+    margin: 2.5rem;
+}   
+
+.about-section h2 {
+    border-bottom: 2px solid var(--light-bg);
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    padding-bottom: 0.5rem;
+}
+
+.about-section p, .about-section ul {
+    margin-bottom: 1rem;
+}   
+
+.about-section ul {
+    padding-left: 2rem;
+}
+
+.about-section li {
+    margin-bottom: 0.5rem;
+    list-style-type: disc;
+}
+
+/* Center the final link and give it a nice pill CTA look */
+.about-cta {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.cta-link {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(106,17,203,0.18);
+    transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+}
+
+.cta-link:hover,
+.cta-link:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(106,17,203,0.22);
+    outline: none;
+    opacity: 0.98;
+}
+
+/* Responsive increase of top spacing on wider screens */
+@media (min-width: 768px) {
+    .about-page { margin-top: 4rem; }
+    .about-cta { margin-top: 2rem; }
+}
+
+/* Mobile Navigation */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* hamburger bars */
+.mobile-menu-btn .bar {
+    display: block;
+    width: 22px;
+    height: 2.5px;
+    background: #fff;
+    border-radius: 2px;
+    margin: 4px 0;
+    transition: transform 240ms ease, opacity 200ms ease;
+}
+
+/* transform to X when open */
+.mobile-menu-btn.open .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.mobile-menu-btn.open .bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.mobile-menu-btn.open .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .nav-container { position: relative; }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        padding: 1rem 20px 1.5rem;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+        z-index: 40;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.75rem 1rem;
+        color: var(--white);
+    }
+
+    .nav-links a:hover, .nav-links a:focus {
+        background: rgba(255,255,255,0.08);
     }
 }
