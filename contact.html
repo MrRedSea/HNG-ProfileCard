@@ -60,20 +60,35 @@
                 <!----------- Subject ------------->
                 <div class="form-group">
                     <label for="contact-subject">Subject</label>
+                    <input type="text"
+                            id="contact-subject"
+                            class="form-control"
+                            data-testid="test-contact-subject"
+                            placeholder="Please enter subject"
+                            required>
+                    <div class="error-message" id="email-error" data-testid="test-contact-error-email">
+                        Please enter a subject for your message
+                    </div>
+                </div>
+
+                <!----------- Message ------------->
+                <div class="form-group">
+                    <label for="contact-message">Message</label>
                     <textarea id="contact-message"
                                 class="form-control"
                                 data-testid="test-contact-message"
-                                placeholder="complain"
-                                required></textarea>
+                                placeholder="Please enter your message here"
+                                required>
+                    </textarea>
                 </div>
                 <div class="error-message" id="message-error" data-testid="test-contact-error-message">
-                    Please entr a message with atleast 10 characters
+                    Please enter a message with atleast 10 characters
                 </div>
 
                 <button type="submit" class="submit-btn" data-testid="test-contact-submit">Send Message</button>
 
                 <div class="success-message" data-testid="test-contact-success">
-                    Thank you for your message! We'll get backto you son.
+                    Thank you for your message! We'll get back to you soon.
                 </div>
 
             </form>
